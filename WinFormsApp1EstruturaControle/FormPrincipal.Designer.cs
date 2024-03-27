@@ -29,7 +29,64 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
+            menuStrip1 = new MenuStrip();
+            contaToolStripMenuItem = new ToolStripMenuItem();
+            clienteToolStripMenuItem = new ToolStripMenuItem();
+            ferramentasToolStripMenuItem = new ToolStripMenuItem();
+            contadorToolStripMenuItem = new ToolStripMenuItem();
+            ajudaToolStripMenuItem = new ToolStripMenuItem();
+            sairToolStripMenuItem = new ToolStripMenuItem();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
+            // 
+            // menuStrip1
+            // 
+            menuStrip1.Items.AddRange(new ToolStripItem[] { contaToolStripMenuItem, clienteToolStripMenuItem, ferramentasToolStripMenuItem, ajudaToolStripMenuItem, sairToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(577, 24);
+            menuStrip1.TabIndex = 0;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // contaToolStripMenuItem
+            // 
+            contaToolStripMenuItem.Name = "contaToolStripMenuItem";
+            contaToolStripMenuItem.Size = new Size(56, 20);
+            contaToolStripMenuItem.Text = "Contas";
+            contaToolStripMenuItem.Click += contaToolStripMenuItem_Click;
+            // 
+            // clienteToolStripMenuItem
+            // 
+            clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
+            clienteToolStripMenuItem.Size = new Size(61, 20);
+            clienteToolStripMenuItem.Text = "Clientes";
+            // 
+            // ferramentasToolStripMenuItem
+            // 
+            ferramentasToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { contadorToolStripMenuItem });
+            ferramentasToolStripMenuItem.Name = "ferramentasToolStripMenuItem";
+            ferramentasToolStripMenuItem.Size = new Size(84, 20);
+            ferramentasToolStripMenuItem.Text = "Ferramentas";
+            // 
+            // contadorToolStripMenuItem
+            // 
+            contadorToolStripMenuItem.Name = "contadorToolStripMenuItem";
+            contadorToolStripMenuItem.Size = new Size(180, 22);
+            contadorToolStripMenuItem.Text = "Contador";
+            contadorToolStripMenuItem.Click += contadorToolStripMenuItem_Click;
+            // 
+            // ajudaToolStripMenuItem
+            // 
+            ajudaToolStripMenuItem.Name = "ajudaToolStripMenuItem";
+            ajudaToolStripMenuItem.Size = new Size(50, 20);
+            ajudaToolStripMenuItem.Text = "Ajuda";
+            // 
+            // sairToolStripMenuItem
+            // 
+            sairToolStripMenuItem.Name = "sairToolStripMenuItem";
+            sairToolStripMenuItem.Size = new Size(38, 20);
+            sairToolStripMenuItem.Text = "Sair";
+            sairToolStripMenuItem.Click += sairToolStripMenuItem_Click;
             // 
             // FormPrincipal
             // 
@@ -39,14 +96,28 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(577, 383);
+            Controls.Add(menuStrip1);
+            DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.None;
+            MainMenuStrip = menuStrip1;
             Name = "FormPrincipal";
             Text = "Senac - Banking";
             WindowState = FormWindowState.Maximized;
             Load += FormPrincipal_Load;
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem contaToolStripMenuItem;
+        private ToolStripMenuItem clienteToolStripMenuItem;
+        private ToolStripMenuItem ferramentasToolStripMenuItem;
+        private ToolStripMenuItem ajudaToolStripMenuItem;
+        private ToolStripMenuItem sairToolStripMenuItem;
+        private ToolStripMenuItem contadorToolStripMenuItem;
     }
 }
